@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "328771308003",
+    "project_id": "accountlock",
+    "storage_bucket": "accountlock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328771308003:android:bf0b590a72b165c5af78d6",
+        "android_client_info": {
+          "package_name": "com.example.flutter_password_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328771308003-gtptkg80qv4fj7rmagcmmns0rrl8v1s3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_password_manager",
+            "certificate_hash": "60f692f5295713e97effbaff832b58cff50c7ce5"
+          }
+        },
+        {
+          "client_id": "328771308003-3kjim8uqeigtts5239pq9nv3ugg8ha1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnnHlA7gVAiQbLmrEri0FnStT_QkXzmwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328771308003-3kjim8uqeigtts5239pq9nv3ugg8ha1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
