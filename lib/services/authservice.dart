@@ -3,6 +3,7 @@ part of 'services.dart';
 class AuthService {
   static FirebaseAuth auth = FirebaseAuth.instance;
 
+  //Sign in with google account
   static Future<UserCredential> signInWithGoogle() async {
     Firebase.initializeApp();
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -15,6 +16,7 @@ class AuthService {
     return await auth.signInWithCredential(credential);
   }
 
+  //Sign out from application
   static Future signOut() async {
     Firebase.initializeApp();
     await FirebaseAuth.instance.signOut();

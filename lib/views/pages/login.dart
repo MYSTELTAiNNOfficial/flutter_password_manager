@@ -123,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () async {
+                          //sign in with google
                           await AuthService.signInWithGoogle().then((value) {
                             UiToast.toastOk(
                                 "Welcome back ${value.user!.displayName}");
