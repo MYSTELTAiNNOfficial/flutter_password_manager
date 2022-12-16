@@ -29,8 +29,8 @@ class _ProfilePageState extends State<ProfilePage> {
               icon: Icon(Icons.logout))
         ],
       ),
-      body: Center(
-        child: Text('Profile Page'),
+      body: Column(
+        children: [],
       ),
     );
   }
