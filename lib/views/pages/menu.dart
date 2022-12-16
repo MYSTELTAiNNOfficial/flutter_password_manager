@@ -51,7 +51,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               ],
               currentIndex: _selectedIndex,
-              selectedItemColor: Colors.black,
+              selectedItemColor: Colors.white,
               onTap: _onItemTapped,
             ),
           ),
