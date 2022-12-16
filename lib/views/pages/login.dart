@@ -123,16 +123,16 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () async {
-                          //sign in with google
-                          await AuthService.signInWithGoogle().then((value) {
-                            UiToast.toastOk(
-                                "Welcome back ${value.user!.displayName}");
-                          });
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MenuPage()));
-                        },
+                            //sign in with google
+                            await AuthService.signInWithGoogle().then((value) {
+                              UiToast.toastOk(
+                                  "Welcome back ${value.user!.displayName}");
+                            });
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MenuPage()));
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                             elevation: 0,
