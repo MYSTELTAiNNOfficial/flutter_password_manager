@@ -1,8 +1,8 @@
 part of 'widgets.dart';
 
 class AllDataCard extends StatefulWidget {
-  final DataByIdUser dataUser;
-  const AllDataCard(this.dataUser);
+  final AllDataStatus allDataStatus;
+  const AllDataCard(this.allDataStatus);
 
   @override
   _AllDataCardState createState() => _AllDataCardState();
@@ -11,9 +11,10 @@ class AllDataCard extends StatefulWidget {
 class _AllDataCardState extends State<AllDataCard> {
   @override
   Widget build(BuildContext context) {
-    DataByIdUser dataUser = widget.dataUser;
+    // DataByIdUser dataUser = widget.dataUser;
+    AllDataStatus allData = widget.allDataStatus;
     return Card(
-      color: const Color(0x60C6FF),
+      color: Colors.lightBlue,
       margin: const EdgeInsets.fromLTRB(16, 8, 20, 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       elevation: 2,
@@ -22,7 +23,7 @@ class _AllDataCardState extends State<AllDataCard> {
         splashColor: Color.fromARGB(255, 143, 203, 255),
         child: ListTile(
           contentPadding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-          title: Text("${dataUser.appName}",
+          title: Text("${allData.data!.elementAt(0).appName}",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,15 +31,16 @@ class _AllDataCardState extends State<AllDataCard> {
             children: [
               const SizedBox(height: 8),
               Text(
-                "Username: ${dataUser.username}",
+                "Username: ${allData.data!.elementAt(0).username}",
                 style: TextStyle(
                   fontSize: 14,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
-                "Email: ${dataUser.email}",
-                style: TextStyle(fontSize: 14),
+                "Email: ${allData.data!.elementAt(0).email}",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               )
             ],
           ),
