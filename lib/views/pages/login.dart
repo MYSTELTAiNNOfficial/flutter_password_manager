@@ -47,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     TextFormField(
+                      readOnly: true,
                       keyboardType: TextInputType.emailAddress,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       controller: ctrlEmail,
@@ -65,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(height: 8),
                     TextFormField(
+                      readOnly: true,
                       obscureText: isHide,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       controller: ctrlPass,
@@ -96,11 +98,8 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () async {
-                            // signOut();
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MenuPage()));
+                            UiToast.toastWarning(
+                                "This feature is not available yet");
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
@@ -123,7 +122,11 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () async {
-                            // signOut();
+                            //sign in with google
+                            await AuthService.signInWithGoogle().then((value) {
+                              UiToast.toastOk(
+                                  "Welcome back ${value.user!.displayName}");
+                            });
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
@@ -147,12 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                     Align(
                       alignment: Alignment(0, 0.89),
                       child: GestureDetector(
-                        onTap: () async {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RegisPage()));
-                        },
+                        onTap: () async {},
                         child: Text(
                           "Don't have account? Sign up here!",
                           style: TextStyle(color: Colors.blue, fontSize: 14),

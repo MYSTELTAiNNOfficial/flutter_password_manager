@@ -1,4 +1,4 @@
-# flutter_password_manager
+# Account Lock App
 
 A new Flutter project.
 

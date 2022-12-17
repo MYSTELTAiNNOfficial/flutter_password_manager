@@ -13,9 +13,24 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile Page'),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                await AuthService.signOut().then((value) {
+                  if (value) {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    UiToast.toastOk("Logout successful!");
+                  } else {
+                    UiToast.toastErr("Logout failed!");
+                  }
+                });
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
-      body: Center(
-        child: Text('Profile Page'),
+      body: Column(
+        children: [],
       ),
     );
   }
