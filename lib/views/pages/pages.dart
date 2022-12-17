@@ -11,6 +11,7 @@ import 'package:http/http.dart';
 import 'package:lazy_loading_list/lazy_loading_list.dart';
 
 import '../../models/alldatabyiduser/data.dart';
+import '../../models/getdatabyiddata/detaildata.dart';
 import '../../models/models.dart';
 
 part 'splash.dart';

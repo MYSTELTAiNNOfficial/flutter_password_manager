@@ -8,7 +8,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool IsLoading = false;
+  bool isLoading = false;
 
   List<DataByIdUser> listData = [];
   Future<dynamic> getAllData() async {
