@@ -11,8 +11,9 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[50],
       appBar: AppBar(
-        title: Text('Profile Page'),
+        title: Text('Profile'),
         actions: [
           IconButton(
               onPressed: () async {
@@ -29,8 +30,29 @@ class _ProfilePageState extends State<ProfilePage> {
               icon: Icon(Icons.logout))
         ],
       ),
-      body: Column(
-        children: [],
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 32),
+            CircleAvatar(
+              radius: 50,
+              backgroundImage:
+                  NetworkImage("${AuthService.auth.currentUser!.photoURL}"),
+            ),
+            SizedBox(height: 20),
+            Text("Username: ",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            SizedBox(height: 16),
+            Text("${AuthService.auth.currentUser!.displayName}",
+                style: TextStyle(fontSize: 18)),
+            SizedBox(height: 16),
+            Text("Email: ",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            SizedBox(height: 16),
+            Text("${AuthService.auth.currentUser!.email}",
+                style: TextStyle(fontSize: 18)),
+          ],
+        ),
       ),
     );
   }

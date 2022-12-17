@@ -8,6 +8,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool IsLoading = false;
+
+  List<DataByIdUser> listData = [];
+  Future<dynamic> getAllData() async {
+    await MasterDataService.getAllDatas().then((value) {
+      setState(() {
+        listData = value as List<DataByIdUser>;
+      });
+      print(listData.toString());
+      return listData;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getAllData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +34,29 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
       ),
       body: Center(
-        child: Text('Home Page'),
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              child: listData.isEmpty
+                  ? const Align(
+                      alignment: Alignment.center,
+                      child: Text("There is no Data"))
+                  : ListView.builder(
+                      itemCount: listData.length,
+                      itemBuilder: (context, index) {
+                        // return LazyLoadingList(
+                        //     loadMore: () {},
+                        //     child: AllDataCard(listData[index]),
+                        //     index: index,
+                        //     hasMore: true);
+                        return Container();
+                      },
+                    ),
+            ),
+          ],
+        ),
       ),
     );
   }
