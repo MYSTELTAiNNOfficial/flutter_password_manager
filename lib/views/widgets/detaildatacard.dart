@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
 class DetailDataCard extends StatefulWidget {
-  final DetailDataStatus detailData;
+  final DataByIdData detailData;
   const DetailDataCard(this.detailData);
 
   @override
@@ -11,7 +11,7 @@ class DetailDataCard extends StatefulWidget {
 class _DetailDataCardState extends State<DetailDataCard> {
   @override
   Widget build(BuildContext context) {
-    DetailDataStatus detailData = widget.detailData;
+    DataByIdData detailData = widget.detailData;
     return Card(
       color: Colors.lightBlue,
       margin: const EdgeInsets.fromLTRB(16, 8, 20, 8),
@@ -27,7 +27,7 @@ class _DetailDataCardState extends State<DetailDataCard> {
             ),
             const SizedBox(height: 8),
             Text(
-              "${detailData.data!.elementAt(0).appName}",
+              "${detailData.appName}",
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
@@ -37,7 +37,7 @@ class _DetailDataCardState extends State<DetailDataCard> {
             ),
             const SizedBox(height: 8),
             Text(
-              "${detailData.data!.elementAt(0).username}",
+              "${detailData.username}",
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
@@ -47,7 +47,7 @@ class _DetailDataCardState extends State<DetailDataCard> {
             ),
             const SizedBox(height: 8),
             Text(
-              "${detailData.data!.elementAt(0).email}",
+              "${detailData.email}",
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
@@ -57,7 +57,7 @@ class _DetailDataCardState extends State<DetailDataCard> {
             ),
             const SizedBox(height: 8),
             Text(
-              "${detailData.data!.elementAt(0).password}",
+              "${detailData.password}",
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
@@ -67,7 +67,7 @@ class _DetailDataCardState extends State<DetailDataCard> {
             ),
             const SizedBox(height: 8),
             Text(
-              "${detailData.data!.elementAt(0).description}",
+              "${detailData.description}",
               style: TextStyle(fontSize: 16),
             ),
           ],

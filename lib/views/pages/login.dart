@@ -14,8 +14,6 @@ class _LoginPageState extends State<LoginPage> {
   bool isHide = true;
   bool isLoading = false;
 
-  var userProfile = UserProfile();
-
   var emailLogin;
   var uidLogin;
 

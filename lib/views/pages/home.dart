@@ -8,9 +8,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<GetDataByIdUser> allDataByUserId = [];
+  List<DataByIdUser> allDataByUserId = [];
 
-  Future<List<GetDataByIdUser>> getDatas() async {
+  Future<List<DataByIdUser>> getDatas() async {
     await ServerService.getDataByUserId().then((value) {
       setState(() {
         allDataByUserId = value;

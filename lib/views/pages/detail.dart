@@ -13,7 +13,7 @@ class _DetailPageState extends State<DetailPage> {
 
   List<DataByIdData> listDetail = [];
   Future<dynamic> getDetailData(dynamic id) async {
-    await MasterDataService.DetailData(id).then((value) {
+    await ServerService.getDataByDataId(id).then((value) {
       setState(() {
         listDetail = value as List<DataByIdData>;
       });

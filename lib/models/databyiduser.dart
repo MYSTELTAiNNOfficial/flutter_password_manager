@@ -1,17 +1,15 @@
-import 'dart:convert';
+part of 'models.dart';
 
-import 'package:equatable/equatable.dart';
-
-class GetDataByIdUser extends Equatable {
+class DataByIdUser extends Equatable {
   final String? id;
   final String? appName;
   final String? username;
   final String? email;
 
-  const GetDataByIdUser({this.id, this.appName, this.username, this.email});
+  const DataByIdUser({this.id, this.appName, this.username, this.email});
 
-  factory GetDataByIdUser.fromJson(Map<String, dynamic> data) {
-    return GetDataByIdUser(
+  factory DataByIdUser.fromJson(Map<String, dynamic> data) {
+    return DataByIdUser(
       id: data['id'] as String?,
       appName: data['app_name'] as String?,
       username: data['username'] as String?,

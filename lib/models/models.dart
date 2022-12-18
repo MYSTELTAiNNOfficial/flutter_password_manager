@@ -1,3 +1,5 @@
+import 'dart:convert';
 import 'package:equatable/equatable.dart';
 
-part 'userprofile.dart';
+part 'databyiduser.dart';
+part 'detaildata.dart';
