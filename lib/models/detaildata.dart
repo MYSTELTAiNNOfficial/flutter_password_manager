@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'models.dart';
 
 class DataByIdData extends Equatable {
   final String? id;

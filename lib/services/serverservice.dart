@@ -28,15 +28,72 @@ class ServerService {
     return response;
   }
 
-  static Future<List<GetDataByIdUser>> getDataByUserId() async {
+  static Future<List<DataByIdUser>> getDataByUserId() async {
     var key = await AuthService.getUid();
     var url = Uri.parse("https://${ConstAPI.baseUrl}/index.php/api/data/get");
     var response = await http.get(url,
         headers: {"Content-Type": "application/json", "api-key": key});
-    
-    List <GetDataByIdUser> data = [];
+
+    List<DataByIdUser> data = [];
     var json = jsonDecode(response.body);
-    data = (json['data'] as List).map((e) => GetDataByIdUser.fromJson(e)).toList();
+    data = (json['data'] as List).map((e) => DataByIdUser.fromJson(e)).toList();
     return data;
+  }
+
+  static Future<List<DataByIdData>> getDataByDataId(dynamic id) async {
+    var key = await AuthService.getUid();
+    var url = Uri.parse("https://${ConstAPI.baseUrl}/index.php/api/data/get");
+    var body = jsonEncode({
+      "id": id,
+    });
+    var response = await http.post(url,
+        body: body,
+        headers: {"Content-Type": "application/json", "api-key": key});
+
+    List<DataByIdData> data = [];
+    var json = jsonDecode(response.body);
+    data = (json['data'] as List).map((e) => DataByIdData.fromJson(e)).toList();
+    return data;
+  }
+
+  static Future<http.Response> editData(String app_name, String username,
+      dynamic email, dynamic password, dynamic desc) async {
+    var key = await AuthService.getUid();
+    var response = await http.post(
+        Uri.http("https://${ConstAPI.baseUrl}/index.php/api/data/add"),
+        headers: <String, String>{
+          'Content-Type': 'application/json;',
+          "api-key": key
+        },
+        body: jsonEncode(<String, String>{
+          'app_name': app_name,
+          'username': username,
+          'email': email,
+          'password': password,
+          'description': desc
+        }));
+
+    var job = json.decode(response.body);
+    print(job.toString());
+
+    return response;
+  }
+
+  static Future<http.Response> deleteData(dynamic id) async {
+    var key = await AuthService.getUid();
+    var response = await http.post(
+        Uri.http("https://${ConstAPI.baseUrl}/index.php/api/data/delete"),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          "api-key": key
+        },
+        body: jsonEncode(<String, String>{
+          'id': id,
+        }));
+
+    var job = json.decode(response.body);
+    print(job.toString());
+
+    return response;
   }
 }
