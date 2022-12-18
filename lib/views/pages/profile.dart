@@ -8,9 +8,28 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  var userDisplayName = "";
+  var userEmail = "";
+
+  @override
+  void initState() {
+    super.initState();
+    getUserProfile();
+  }
+
+  void getUserProfile() async {
+    var tempDisplayName = await AuthService.getDisplayName();
+    var tempEmail = await AuthService.getEmail();
+    setState(() {
+      userDisplayName = tempDisplayName;
+      userEmail = tempEmail;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.blue[50],
       appBar: AppBar(
         title: Text('Profile'),

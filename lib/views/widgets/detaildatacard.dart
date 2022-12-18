@@ -32,7 +32,7 @@ class _DetailDataCardState extends State<DetailDataCard> {
             ),
             const SizedBox(height: 8),
             Text(
-              "Nickname:",
+              "Username:",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),

@@ -7,7 +7,7 @@ class UiToast {
     context = ctx;
   }
 
-  static void toastOk(String msg) {
+  static toastOk(String msg) {
     Fluttertoast.showToast(
         msg: msg,
         toastLength: Toast.LENGTH_LONG,
@@ -17,7 +17,7 @@ class UiToast {
         fontSize: 14);
   }
 
-  static void toastErr(String msg) {
+  static toastErr(String msg) {
     Fluttertoast.showToast(
         msg: msg,
         toastLength: Toast.LENGTH_LONG,
@@ -27,7 +27,7 @@ class UiToast {
         fontSize: 14);
   }
 
-  static void toastWarning(String msg) {
+  static toastWarning(String msg) {
     Fluttertoast.showToast(
         msg: msg,
         toastLength: Toast.LENGTH_LONG,

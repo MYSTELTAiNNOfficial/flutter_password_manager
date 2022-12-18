@@ -1,5 +1,6 @@
-// base url and api key for access
-class Const {
-  static String BASE_URL = "https://xyz.api.mysteltainn.com";
-  static String API = "GmDskVEC2NVS5r8HwynqdfSYWwGq";
+part of 'shared.dart';
+
+class ConstAPI {
+  static String baseUrl = "xyz.api.mysteltainn.com";
+  static String guestKey = "GmDskVEC2NVS5r8HwynqdfSYWwGq";
 }
