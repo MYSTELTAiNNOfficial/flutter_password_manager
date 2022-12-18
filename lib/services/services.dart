@@ -10,3 +10,8 @@ import '../shared/shared.dart';
 
 part 'authservice.dart';
 part 'serverservice.dart';
+import '../models/models.dart';
+import '../shared/const.dart';
+
+part 'authservice.dart';
+part 'masterdataservice.dart';

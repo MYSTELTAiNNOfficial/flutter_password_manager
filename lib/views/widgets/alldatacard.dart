@@ -13,7 +13,7 @@ class _AllDataCardState extends State<AllDataCard> {
   Widget build(BuildContext context) {
     GetDataByIdUser dataUser = widget.dataUser;
     return Card(
-      color: const Color(0x60C6FF),
+      color: Colors.lightBlue,
       margin: const EdgeInsets.fromLTRB(16, 8, 20, 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       elevation: 2,
@@ -33,12 +33,13 @@ class _AllDataCardState extends State<AllDataCard> {
                 "Username: ${dataUser.username}",
                 style: TextStyle(
                   fontSize: 14,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 "Email: ${dataUser.email}",
-                style: TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               )
             ],
           ),
