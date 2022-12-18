@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
 class AllDataCard extends StatefulWidget {
-  final DataByIdUser dataUser;
+  final GetDataByIdUser dataUser;
   const AllDataCard(this.dataUser);
 
   @override
@@ -11,7 +11,7 @@ class AllDataCard extends StatefulWidget {
 class _AllDataCardState extends State<AllDataCard> {
   @override
   Widget build(BuildContext context) {
-    DataByIdUser dataUser = widget.dataUser;
+    GetDataByIdUser dataUser = widget.dataUser;
     return Card(
       color: const Color(0x60C6FF),
       margin: const EdgeInsets.fromLTRB(16, 8, 20, 8),

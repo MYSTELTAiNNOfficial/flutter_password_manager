@@ -1,30 +1,21 @@
 part of 'models.dart';
 
 class UserProfile extends Equatable {
-  final int? id;
   final String? email;
   final String? key;
-  final String? createdAt;
 
-  const UserProfile({this.id, this.email, this.key, this.createdAt});
+  const UserProfile({this.email, this.key});
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
-        id: json['id'] as int?,
         email: json['email'] as String?,
         key: json['key'] as String?,
-        createdAt: json['created_at'] as String?,
       );
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'email': email,
-        'key': key,
-        'created_at': createdAt,
-      };
+  Map<String, dynamic> toJson() => {'email': email, 'key': key};
 
   @override
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [id, email, key, createdAt];
+  List<Object?> get props => [email, key];
 }

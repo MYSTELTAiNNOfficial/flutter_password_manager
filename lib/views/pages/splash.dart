@@ -22,8 +22,14 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   }
 
   void navigationPage() async {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => LoginPage()));
+    var currentUserUid = await AuthService.getUid();
+    if (currentUserUid != null) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MenuPage()));
+    } else {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
+    }
   }
 
   @override

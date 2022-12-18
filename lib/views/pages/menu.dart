@@ -29,12 +29,10 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          _widgetOptions.elementAt(_selectedIndex),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: BottomNavigationBar(
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
               backgroundColor: Colors.blue,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
@@ -54,9 +52,6 @@ class _MenuPageState extends State<MenuPage> {
               selectedItemColor: Colors.white,
               onTap: _onItemTapped,
             ),
-          ),
-        ],
-      ),
     );
   }
 }

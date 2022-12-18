@@ -14,6 +14,11 @@ class _LoginPageState extends State<LoginPage> {
   bool isHide = true;
   bool isLoading = false;
 
+  var userProfile = UserProfile();
+
+  var emailLogin;
+  var uidLogin;
+
   @override
   void initState() {
     super.initState();
@@ -122,10 +127,16 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () async {
-                            //sign in with google
-                            await AuthService.signInWithGoogle().then((value) {
-                              UiToast.toastOk(
-                                  "Welcome back ${value.user!.displayName}");
+                            await AuthService.signInWithGoogle();
+                            emailLogin = await AuthService.getEmail();
+                            uidLogin = await AuthService.getUid();
+                            await ServerService.login(emailLogin, uidLogin)
+                                .then((value) {
+                              if (value.statusCode == 200) {
+                                UiToast.toastOk("Login success");
+                              } else {
+                                UiToast.toastErr("Login failed");
+                              }
                             });
                             Navigator.pushReplacement(
                                 context,
