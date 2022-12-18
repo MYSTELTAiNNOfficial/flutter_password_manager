@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                           onPressed: () async {
                             UiToast.toastWarning(
-                                "This feature is not available yet");
+                                "This feature is not available yet, please login with google account");
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,

@@ -56,6 +56,55 @@ class _DetailPageState extends State<DetailPage> {
                       },
                     ),
             ),
+            SizedBox(height: 12),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    //Go to edit form
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => FormPage()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    elevation: 0,
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    padding: EdgeInsets.fromLTRB(24, 14, 24, 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text("Edit Data")),
+            ),
+            SizedBox(height: 12),
+            Divider(thickness: 1),
+            SizedBox(height: 12),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    //Delete Data
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MenuPage()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    elevation: 0,
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    padding: EdgeInsets.fromLTRB(24, 14, 24, 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text("Delete Data")),
+            ),
           ],
         ),
       ),
