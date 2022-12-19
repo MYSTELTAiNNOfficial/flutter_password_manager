@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/material.dart';
 import 'package:flutter_password_manager/services/services.dart';
 import 'package:flutter_password_manager/views/pages/pages.dart';
