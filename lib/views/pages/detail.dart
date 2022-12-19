@@ -65,7 +65,7 @@ class _DetailPageState extends State<DetailPage> {
                 child: Column(
                   children: [
                     Container(
-                      height: 400,
+                      height: 380,
                       child: listDetail.isEmpty
                           ? const Align(
                               alignment: Alignment.center,
@@ -78,12 +78,13 @@ class _DetailPageState extends State<DetailPage> {
                                     child: DetailDataCard(listDetail[index]),
                                     index: index,
                                     hasMore: true);
-                                return Container();
                               },
                             ),
                     ),
-                    SizedBox(height: 12),
+                    //SizedBox(height: 4),
                     Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.fromLTRB(44, 0, 44, 0),
                       child: ElevatedButton(
                           onPressed: () async {
                             //Go to edit form
@@ -100,7 +101,7 @@ class _DetailPageState extends State<DetailPage> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
-                            padding: EdgeInsets.fromLTRB(24, 14, 24, 12),
+                            padding: EdgeInsets.fromLTRB(24, 14, 24, 14),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -108,9 +109,23 @@ class _DetailPageState extends State<DetailPage> {
                           child: Text("Edit Data")),
                     ),
                     SizedBox(height: 12),
-                    Divider(thickness: 1),
-                    SizedBox(height: 12),
+
                     Container(
+                      padding: EdgeInsets.fromLTRB(30, 8, 30, 8),
+                      child: Divider(
+                        thickness: 1,
+                        color: Colors.black54,
+                      ),
+                    ),
+
+                    SizedBox(height: 12),
+
+                    /*
+                    **Delete Data
+                    */
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.fromLTRB(44, 0, 44, 0),
                       child: ElevatedButton(
                           onPressed: () async {
                             showDialog(
