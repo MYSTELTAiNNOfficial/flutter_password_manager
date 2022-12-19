@@ -18,7 +18,13 @@ class _AllDataCardState extends State<AllDataCard> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       elevation: 2,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPage(dataUser.id)),
+          );
+        },
         splashColor: Color.fromARGB(255, 143, 203, 255),
         child: ListTile(
           contentPadding: const EdgeInsets.fromLTRB(16, 8, 16, 8),

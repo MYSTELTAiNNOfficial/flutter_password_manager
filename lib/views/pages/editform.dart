@@ -1,13 +1,14 @@
 part of 'pages.dart';
 
-class FormPage extends StatefulWidget {
-  const FormPage({Key? key}) : super(key: key);
+class EditFormPage extends StatefulWidget {
+  final List<DataByIdData> detailData;
+  const EditFormPage(this.detailData);
 
   @override
-  _FormPageState createState() => _FormPageState();
+  _EditFormPageState createState() => _EditFormPageState();
 }
 
-class _FormPageState extends State<FormPage> {
+class _EditFormPageState extends State<EditFormPage> {
   final _formkey = GlobalKey<FormState>();
   final ctrlAppName = TextEditingController();
   final ctrlUsername = TextEditingController();
@@ -20,6 +21,11 @@ class _FormPageState extends State<FormPage> {
   @override
   void initState() {
     super.initState();
+    ctrlAppName.text = widget.detailData[0].appName.toString();
+    ctrlUsername.text = widget.detailData[0].username.toString();
+    ctrlEmail.text = widget.detailData[0].email.toString();
+    ctrlPass.text = widget.detailData[0].password.toString();
+    ctrlDesc.text = widget.detailData[0].description.toString();
   }
 
   @override
@@ -33,14 +39,15 @@ class _FormPageState extends State<FormPage> {
   }
 
   Future<dynamic> addDataToServer() async {
-    var appName = ctrlAppName.text;
-    var username = ctrlUsername.text;
-    var email = ctrlEmail.text;
-    var pass = ctrlPass.text;
-    var desc = ctrlDesc.text;
+    var appName = ctrlAppName.text.toString();
+    var username = ctrlUsername.text.toString();
+    var email = ctrlEmail.text.toString();
+    var pass = ctrlPass.text.toString();
+    var desc = ctrlDesc.text.toString();
+    var id = widget.detailData[0].id.toString();
     dynamic response;
 
-    await ServerService.addData(appName, username, email, pass, desc)
+    await ServerService.editData(id, appName, username, email, pass, desc)
         .then((value) {
       if (value != null) {
         response = jsonDecode(value.body);
@@ -48,8 +55,9 @@ class _FormPageState extends State<FormPage> {
           isLoading = false;
         });
         if (response['status']) {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => MenuPage()));
+           Navigator.pushAndRemoveUntil<dynamic>(context, 
+                MaterialPageRoute<dynamic>(builder: (context) => MenuPage()), 
+                (route) => false);
           UiToast.toastOk(response['message']);
         } else {
           UiToast.toastErr(response['message']);
