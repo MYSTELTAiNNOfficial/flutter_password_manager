@@ -56,35 +56,34 @@ class ServerService {
     return data;
   }
 
-  static Future<http.Response> editData(String app_name, String username,
+  static Future<http.Response> editData(dynamic id, String app_name, String username,
       dynamic email, dynamic password, dynamic desc) async {
     var key = await AuthService.getUid();
     var response = await http.post(
-        Uri.http("https://${ConstAPI.baseUrl}/index.php/api/data/add"),
+        Uri.parse("https://${ConstAPI.baseUrl}/index.php/api/data/update"),
         headers: <String, String>{
-          'Content-Type': 'application/json;',
+          'Content-Type': 'application/json',
           "api-key": key
         },
         body: jsonEncode(<String, String>{
+          'id': id,
           'app_name': app_name,
           'username': username,
           'email': email,
           'password': password,
-          'description': desc
+          'desc': desc
         }));
 
     var job = json.decode(response.body);
-    print(job.toString());
-
     return response;
   }
 
   static Future<http.Response> deleteData(dynamic id) async {
     var key = await AuthService.getUid();
     var response = await http.post(
-        Uri.http("https://${ConstAPI.baseUrl}/index.php/api/data/delete"),
+        Uri.parse("https://${ConstAPI.baseUrl}/index.php/api/data/delete"),
         headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
+          'Content-Type': 'application/json',
           "api-key": key
         },
         body: jsonEncode(<String, String>{
@@ -92,8 +91,6 @@ class ServerService {
         }));
 
     var job = json.decode(response.body);
-    print(job.toString());
-
     return response;
   }
 }

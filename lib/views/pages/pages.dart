@@ -15,6 +15,7 @@ part 'login.dart';
 part 'home.dart';
 part 'regis.dart';
 part 'menu.dart';
-part 'form.dart';
+part 'addform.dart';
 part 'profile.dart';
 part 'detail.dart';
+part 'editform.dart';
