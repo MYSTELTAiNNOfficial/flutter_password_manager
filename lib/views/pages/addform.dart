@@ -194,6 +194,9 @@ class _AddFormPageState extends State<AddFormPage> {
                                   setState(() {
                                     isLoading = true;
                                   });
+                                  /*
+                                  ** Call function to add data to server
+                                  */
                                   addDataToServer();
                                 }
                               },

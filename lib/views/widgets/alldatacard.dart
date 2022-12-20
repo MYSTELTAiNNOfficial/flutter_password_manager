@@ -1,5 +1,9 @@
 part of 'widgets.dart';
 
+/*
+** Card Widget for All Data By Id User
+*/
+
 class AllDataCard extends StatefulWidget {
   final DataByIdUser dataUser;
   const AllDataCard(this.dataUser);

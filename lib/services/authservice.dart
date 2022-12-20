@@ -1,5 +1,9 @@
 part of 'services.dart';
 
+/*
+** Google Firebase Authentication Service
+*/
+
 class AuthService {
   static FirebaseAuth auth = FirebaseAuth.instance;
 

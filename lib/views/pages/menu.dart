@@ -32,26 +32,29 @@ class _MenuPageState extends State<MenuPage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      /*
+      ** Bottom Navigation Bar Menu
+      */
       bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Colors.blue,
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.add_box_outlined),
-                  label: 'Add',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: 'Profile',
-                ),
-              ],
-              currentIndex: _selectedIndex,
-              selectedItemColor: Colors.white,
-              onTap: _onItemTapped,
-            ),
+        backgroundColor: Colors.blue,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_box_outlined),
+            label: 'Add',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }

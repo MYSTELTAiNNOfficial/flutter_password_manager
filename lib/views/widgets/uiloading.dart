@@ -1,5 +1,9 @@
 part of 'widgets.dart';
 
+/*
+** Ui Loading Widget
+*/
+
 class UiLoading {
   static Container loading() {
     return Container(
@@ -14,7 +18,7 @@ class UiLoading {
     );
   }
 
-  static Container loadingDD() {
+  static Container loadingSmallCircle() {
     return Container(
       alignment: Alignment.center,
       width: 30,

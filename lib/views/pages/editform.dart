@@ -55,9 +55,10 @@ class _EditFormPageState extends State<EditFormPage> {
           isLoading = false;
         });
         if (response['status']) {
-           Navigator.pushAndRemoveUntil<dynamic>(context, 
-                MaterialPageRoute<dynamic>(builder: (context) => MenuPage()), 
-                (route) => false);
+          Navigator.pushAndRemoveUntil<dynamic>(
+              context,
+              MaterialPageRoute<dynamic>(builder: (context) => MenuPage()),
+              (route) => false);
           UiToast.toastOk(response['message']);
         } else {
           UiToast.toastErr(response['message']);
@@ -202,6 +203,9 @@ class _EditFormPageState extends State<EditFormPage> {
                                   setState(() {
                                     isLoading = true;
                                   });
+                                  /*
+                                  ** Add edited data to server
+                                  */
                                   addDataToServer();
                                 }
                               },
