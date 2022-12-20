@@ -53,6 +53,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[50],
         appBar: AppBar(
           title: Text('Detail'),
         ),
@@ -87,7 +88,9 @@ class _DetailPageState extends State<DetailPage> {
                       padding: EdgeInsets.fromLTRB(44, 0, 44, 0),
                       child: ElevatedButton(
                           onPressed: () async {
-                            //Go to edit form
+                            /*
+                            **Go to edit form
+                            */
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(

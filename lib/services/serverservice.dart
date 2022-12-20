@@ -1,5 +1,9 @@
 part of 'services.dart';
 
+/*
+** Server Database Service
+*/
+
 class ServerService {
   static Future<http.Response> login(String email, String uid) async {
     var url = Uri.parse("https://${ConstAPI.baseUrl}/index.php/api/user/login");
@@ -56,8 +60,8 @@ class ServerService {
     return data;
   }
 
-  static Future<http.Response> editData(dynamic id, String app_name, String username,
-      dynamic email, dynamic password, dynamic desc) async {
+  static Future<http.Response> editData(dynamic id, String app_name,
+      String username, dynamic email, dynamic password, dynamic desc) async {
     var key = await AuthService.getUid();
     var response = await http.post(
         Uri.parse("https://${ConstAPI.baseUrl}/index.php/api/data/update"),

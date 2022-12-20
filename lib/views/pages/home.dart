@@ -56,8 +56,19 @@ class _HomePageState extends State<HomePage> {
                       child: Text("Ups, tidak ada data"))
                   : ListView.builder(
                       itemCount: allDataByUserId.length,
+                      /*
+                      ** Sorting AppName from A to Z Alphabetically
+                      */
                       itemBuilder: ((context, index) {
-                        final sortedItems = allDataByUserId.sort((a, b) {return a.appName.toString().toLowerCase().compareTo(b.appName.toString().toLowerCase());});
+                        final sortedItems = allDataByUserId.sort((a, b) {
+                          return a.appName
+                              .toString()
+                              .toLowerCase()
+                              .compareTo(b.appName.toString().toLowerCase());
+                        });
+                        /*
+                        ** Return Card Widget
+                        */
                         return LazyLoadingList(
                             initialSizeOfItems: 10,
                             loadMore: () {},
@@ -65,7 +76,6 @@ class _HomePageState extends State<HomePage> {
                             index: index,
                             hasMore: true);
                       })),
-                      
             ),
     );
   }

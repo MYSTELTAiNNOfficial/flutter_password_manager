@@ -36,15 +36,12 @@ class _RegisPageState extends State<RegisPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        // Here we take the value from the RegisPage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text("Register"),
         centerTitle: true,
       ),
       body: Stack(
         children: [
           Container(
-            // color: Colors.orange,
             width: double.infinity,
             height: 420,
             padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
@@ -156,7 +153,7 @@ class _RegisPageState extends State<RegisPage> {
                                     builder: (context) => LoginPage()));
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange,
+                            backgroundColor: Colors.blue,
                             elevation: 0,
                             textStyle: TextStyle(
                               fontSize: 20,
