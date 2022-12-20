@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                   : ListView.builder(
                       itemCount: allDataByUserId.length,
                       itemBuilder: ((context, index) {
+                        final sortedItems = allDataByUserId.sort((a, b) {return a.appName.toString().toLowerCase().compareTo(b.appName.toString().toLowerCase());});
                         return LazyLoadingList(
                             initialSizeOfItems: 10,
                             loadMore: () {},
@@ -64,6 +65,7 @@ class _HomePageState extends State<HomePage> {
                             index: index,
                             hasMore: true);
                       })),
+                      
             ),
     );
   }
