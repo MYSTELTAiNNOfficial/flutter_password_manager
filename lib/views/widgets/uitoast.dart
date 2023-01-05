@@ -1,5 +1,9 @@
 part of 'widgets.dart';
 
+/*
+** Ui Toast Widget
+*/
+
 class UiToast {
   BuildContext? context;
 

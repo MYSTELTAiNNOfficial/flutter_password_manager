@@ -128,6 +128,9 @@ class _LoginPageState extends State<LoginPage> {
                             await AuthService.signInWithGoogle();
                             emailLogin = await AuthService.getEmail();
                             uidLogin = await AuthService.getUid();
+                            /*
+                            ** Add data user to database after success login with google account
+                            */
                             await ServerService.login(emailLogin, uidLogin)
                                 .then((value) {
                               if (value.statusCode == 200) {
